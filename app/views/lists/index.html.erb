@@ -1,0 +1,23 @@
+<div class="text-center">
+  <h2 class = "category-banner_home">See any kind of movies</h2>
+</div>
+
+
+<div class="card-deck">
+  <% @lists.each do |list| %>
+  <%= link_to list_path(list) do %>
+    <div class="card card-<%= list.id %>">
+      <div class="card-body text-center">
+        <h5 class="card-title"><%= list.name %></h5>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+</div>
+
+
+<br>
+
+<div class="text-center">
+  <%= link_to "New List", new_list_path, class: "btn btn-primary" %>
+</div>

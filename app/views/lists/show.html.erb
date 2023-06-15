@@ -1,0 +1,43 @@
+<div class="category-item">
+  <div class="category-banner">
+<h2 class="text-center"><%= @list.name %></h2>
+  </div>
+
+<div>
+<%= link_to "Back to lists", lists_path, class: "btn btn-secondary"%>
+</div>
+<br>
+<br>
+<br>
+
+<h5>See the bookmarks for this category</h5>
+<br>
+<br>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Title</th>
+      <th>Overview</th>
+      <th>Poster URL</th>
+      <th>Rating</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @list.bookmarks.each do |bookmark|  %>
+    <tr>
+      <td><strong><%= bookmark.movie.title %></strong></td>
+      <td><%= bookmark.movie.overview %></td>
+      <td><%= bookmark.movie.poster_url %></td>
+      <td><%= bookmark.movie.rating %></td>
+      <td><%= bookmark.comment %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Add a Bookmark", new_list_bookmark_path(@list), class: "btn btn-success" %>
+
+<%= link_to "Delete",
+  list_path(@list),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-dark"%>

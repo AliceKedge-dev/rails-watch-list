@@ -1,1 +1,41 @@
 // Specific CSS for your home-page
+
+
+.category-banner_home {
+  margin-bottom: 50px;
+  height: 200px;
+  color: white;
+  background-image: url("felix-mooneeram-evlkOfkQ5rE-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-deck {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espacement entre les cartes */
+}
+
+.card {
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  border-radius: 30px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre portée */
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
+
+.card-title a {
+  color: black; /* Couleur du lien */
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+}
